@@ -52,7 +52,7 @@ export default class Api {
       return result
     }
     else {
-      l.warn('No endpoint available.', this.ids)
+      l.warn(`No endpoint available for method name '${methodName}'.`, this.ids)
       // TODO: change to mismatch
       return Result.remoteError('Remote method name is unknown. ' + methodName)
     }
