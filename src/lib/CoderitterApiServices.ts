@@ -54,7 +54,7 @@ export default class Registry {
 
     // APIs
     this.api.endpoints = endpoints
-    log.info('Initialized API with endpoints', endpoints)
+    log.info('Initialized API with endpoints', this.api.ids)
     this.natsApi = new NatsApi(this.natsClient, this.api)
     this.postOnlyApi = new PostOnlyApi(this.httpServer, this.api)
     this.webSocketApi = new WebSocketApi(this.webSocketServer, this.api, this.eventBus)
