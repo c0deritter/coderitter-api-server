@@ -1,5 +1,6 @@
-import { ChangeEvent, EventBus } from 'coderitter-api'
+import { EventBus } from 'coderitter-api'
 import Log from 'coderitter-api-log'
+import { ChangeEvent } from 'mega-nice-change-event'
 import { toJsonObj } from 'mega-nice-json'
 import WebSocket from 'ws'
 import Api from './Api'
