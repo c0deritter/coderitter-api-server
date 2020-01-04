@@ -34,7 +34,7 @@ export default class Registry {
   }
 
   async start(endpoints: { [id: string]: Endpoint }) {
-    log.info('Starting services...')
+    log.info('Starting Coderitter API services...')
 
     // NATS client
     this.natsClient = await connect(this.natsClientConfig)
