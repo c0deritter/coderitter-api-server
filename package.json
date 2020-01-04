@@ -1,0 +1,39 @@
+{
+  "name": "coderitter-api-server",
+  "version": "0.1.0",
+  "description": "Coderitter API server code.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "@types/node": "^13.1.4",
+    "@types/ws": "^6.0.4",
+    "coderitter-api": "^0.11.4",
+    "coderitter-api-log": "^1.3.3",
+    "ts-nats": "^1.2.4",
+    "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "build": "rm -rf lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c0deritter/coderitter-api-server.git"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "Coderitter GmbH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c0deritter/coderitter-api-server/issues"
+  },
+  "homepage": "https://github.com/c0deritter/coderitter-api-serveri#readme"
+}
