@@ -4,4 +4,5 @@ export { default as NatsClient } from './lib/api/NatsClient'
 export { default as PostOnlyApi } from './lib/api/PostOnlyApi'
 export { default as StandardEndpoint } from './lib/api/StandardEndpoint'
 export { default as WebSocketApi } from './lib/api/WebSocketApi'
-
+export { default as CoderitterApiServices } from './lib/CoderitterApiServices'
+export { default as HttpServer } from './lib/service/HttpServer'
