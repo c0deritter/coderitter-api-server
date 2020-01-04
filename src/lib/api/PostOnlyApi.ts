@@ -42,7 +42,5 @@ export default class PostOnlyApi {
       response.end(resultJson, 'utf-8')
       l.debug('Response was send')
     })
-
-    log.info('Attached POSTonly HTTP API to HTTP server')
   }
 }
