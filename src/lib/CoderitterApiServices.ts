@@ -3,7 +3,7 @@ import Log from 'coderitter-api-log'
 import { Client as NatsClient, connect, NatsConnectionOptions, Payload } from 'ts-nats'
 import WebSocket from 'ws'
 import Api, { Endpoint } from './api/Api'
-import NatsApi from './api/NatsApi'
+import NatsApi, { NatsApiConfig } from './api/NatsApi'
 import PostOnlyApi from './api/PostOnlyApi'
 import WebSocketApi from './api/WebSocketApi'
 import HttpServer, { HttpServerConfig } from './service/HttpServer'
@@ -25,10 +25,12 @@ export default class Registry {
 
   private natsClientConfig: NatsConnectionOptions
   private httpServerConfig: HttpServerConfig
+  private natsApiConfig: NatsApiConfig
 
-  constructor(natsClientConfig: NatsConnectionOptions, httpServerConfig: HttpServerConfig) {
+  constructor(natsClientConfig: NatsConnectionOptions, httpServerConfig: HttpServerConfig, natsApiConfig: NatsApiConfig) {
     this.httpServerConfig = httpServerConfig
     this.natsClientConfig = natsClientConfig
+    this.natsApiConfig = natsApiConfig
 
     this.natsClientConfig.payload = Payload.STRING
   }
@@ -55,7 +57,7 @@ export default class Registry {
     // APIs
     this.api.endpoints = endpoints
     log.info('Initialized API with endpoints', this.api.ids)
-    this.natsApi = new NatsApi(this.natsClient, this.api)
+    this.natsApi = new NatsApi(this.natsClient, this.api, this.natsApiConfig)
     this.postOnlyApi = new PostOnlyApi(this.httpServer, this.api)
     this.webSocketApi = new WebSocketApi(this.webSocketServer, this.api, this.eventBus)
 

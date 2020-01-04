@@ -10,14 +10,16 @@ export default class NatsApi {
 
   natsClient: NatsClient
   api: Api
+  config: NatsApiConfig
 
-  constructor(natsClient: NatsClient, api: Api) {
+  constructor(natsClient: NatsClient, api: Api, config: NatsApiConfig) {
     this.natsClient = natsClient
     this.api = api
+    this.config = config
   }
 
   start() {
-    this.natsClient.subscribe('workos', async (err, msg) => {
+    this.natsClient.subscribe(this.config.subject, async (err, msg) => {
       let l = log.fn('handler')
       
       if (err) {
@@ -52,4 +54,8 @@ export default class NatsApi {
       }
     })
   }
+}
+
+export interface NatsApiConfig {
+  subject: string
 }
