@@ -45,14 +45,14 @@ export default class Api {
     l.debug('options =', options)
 
     if (methodName != undefined && methodName in this.endpoints) {
-      l.debug(`Found a reaction for id '${methodName}'`)
-      let reaction = this.endpoints[methodName]
-      let result = await reaction.process(options)
+      l.debug(`Found an endpoint for method '${methodName}'`)
+      let endpoint = this.endpoints[methodName]
+      let result = await endpoint.process(options)
       l.debug('result =', result)
       return result
     }
     else {
-      l.warn('No reaction available.', 'this.endpoints =', this.endpoints)
+      l.warn('No endpoint available.', this.ids)
       // TODO: change to mismatch
       return Result.remoteError('Remote method name is unknown. ' + methodName)
     }
