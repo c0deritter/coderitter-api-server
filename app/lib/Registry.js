@@ -32,7 +32,7 @@ class Registry {
     }
     start(endpoints) {
         return __awaiter(this, void 0, void 0, function* () {
-            log.info('Starting services...');
+            log.info('Starting Coderitter API services...');
             // NATS client
             this.natsClient = yield ts_nats_1.connect(this.natsClientConfig);
             log.info('Connected to NATS servers', this.natsClientConfig.servers);
