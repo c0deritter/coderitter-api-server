@@ -1,6 +1,6 @@
 import { RemoteMethodCall, Result } from 'coderitter-api'
 import Log from 'coderitter-api-log'
-import { Mismatch } from 'mega-nice-validation'
+import { Misfit } from 'mega-nice-validation'
 
 let log = new Log(__filename)
 
@@ -37,7 +37,7 @@ export default class Api {
       }
       else {
         l.warn('Given RemoteOptions misses \'methodName\' property', options)
-        return Result.mismatch(Mismatch.missing('methodName'))
+        return Result.misfits(Misfit.missing('methodName'))
       }
     }
 
