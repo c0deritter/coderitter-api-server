@@ -10,9 +10,8 @@
   "dependencies": {
     "@types/node": "^13.5.0",
     "@types/ws": "^6.0.4",
-    "coderitter-api": "*",
-    "coderitter-api-log": "*",
-    "mega-nice-change-event": "*",
+    "coderitter-api": "^0.20.1",
+    "coderitter-api-remote-method-api": "^1.0.1",
     "ts-nats": "^1.2.4",
     "ws": "^7.2.1"
   },

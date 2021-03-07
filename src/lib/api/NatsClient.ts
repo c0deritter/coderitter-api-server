@@ -1,6 +1,4 @@
-import { RemoteMethodCall, Result } from 'coderitter-api'
-import Log from 'coderitter-api-log'
-import { fromJsonObj, Instantiator, toJsonObj } from 'mega-nice-json'
+import { fromJsonObj, Instantiator, Log, RemoteMethodCall, Result, toJsonObj } from 'coderitter-api'
 import { Client } from 'ts-nats'
 
 let log = new Log(__filename)

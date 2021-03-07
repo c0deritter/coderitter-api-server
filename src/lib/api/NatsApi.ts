@@ -1,8 +1,6 @@
-import { Result } from 'coderitter-api'
-import Log from 'coderitter-api-log'
-import { toJsonObj } from 'mega-nice-json'
+import { Log, Result, toJsonObj } from 'coderitter-api'
+import { Api } from 'coderitter-api-remote-method-api'
 import { Client as NatsClient } from 'ts-nats'
-import Api from './Api'
 
 let log = new Log(__filename)
 
@@ -27,7 +25,7 @@ export default class NatsApi {
       }
 
       else if (msg.reply) {
-        let result = await this.api.process(msg.data)
+        let result = await this.api.callMethod(msg.data)
         l.debug('result =', result)
 
         let resultObj = toJsonObj(result)

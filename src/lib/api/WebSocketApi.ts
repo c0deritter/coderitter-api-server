@@ -1,9 +1,7 @@
-import { EventBus } from 'coderitter-api'
-import Log from 'coderitter-api-log'
+import { EventBus, Log, toJsonObj } from 'coderitter-api'
+import { Api } from 'coderitter-api-remote-method-api'
 import { ChangeEvent } from 'mega-nice-change-event'
-import { toJsonObj } from 'mega-nice-json'
 import WebSocket from 'ws'
-import Api from './Api'
 
 let log = new Log(__filename)
 

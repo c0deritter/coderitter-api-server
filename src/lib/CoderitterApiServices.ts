@@ -2,7 +2,7 @@ import { EventBus } from 'coderitter-api'
 import Log from 'coderitter-api-log'
 import { Client as NatsClient, connect, NatsConnectionOptions, Payload } from 'ts-nats'
 import WebSocket from 'ws'
-import Api, { Endpoint } from './api/Api'
+import Api from 'coderitter-api-remote-method-api'
 import NatsApi, { NatsApiConfig } from './api/NatsApi'
 import PostOnlyApi from './api/PostOnlyApi'
 import WebSocketApi from './api/WebSocketApi'
@@ -35,7 +35,7 @@ export default class Registry {
     this.natsClientConfig.payload = Payload.STRING
   }
 
-  async start(endpoints: { [id: string]: Endpoint }) {
+  async start() {
     log.info('Starting Coderitter API services...')
 
     // NATS client
